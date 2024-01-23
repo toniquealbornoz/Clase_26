@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/detalle.css">
-    <title>Detalle de Productos</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title><%= title %></title>
 </head>
 <body>
-    <h4>Este es el Detalle de los Productos</h4>
-<div>
-    <% for(let i = 1; i < 5; i++) { %>
-        <p> Menu <%= i %> </p>
-        <% } %>
-</div>
-
-    
+    <h4>Este es el Detalle de los Menúes</h4>
+    <!-- Menu Section -->
+    <% menuList.forEach(menu => { %>
+     
+    <div class="ps-row ps-padding-64" id="menu"><%= menu.id %>
+        
+          <h4><%= menu.nombre %></h4>
+          <p class="ps-text-grey"></p><%= menu.descripcion %>
+           </p>
+           <p class="precio"><%= menu.precio %>
+            </p>
+            <img src="/images/<%= menu.imagen %>"alt=""
+            class="imagen-producto">
+          <br />    
+    </div>
+    <% }) %>
 </body>
 </html>
